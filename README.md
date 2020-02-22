@@ -1,3 +1,5 @@
+This is done as a practise project 
+============================
 AndroidTrivia - starter code
 ============================
 
