@@ -95,16 +95,16 @@ class GameFragment : Fragment() {
                     questionIndex++
                     // Advance to the next question
                     if (questionIndex < numQuestions) {
-                        currentQuestion = questions[questionIndex]
+                        this.currentQuestion = questions[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, this.questionIndex))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }
